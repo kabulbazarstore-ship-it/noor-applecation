@@ -1,0 +1,17 @@
+/* NOOR — bundled typography. No web font/CDN dependency. */
+@font-face{font-family:'Vazirmatn';src:url('NotoKufiArabic-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Vazirmatn';src:url('NotoKufiArabic-Bold.ttf') format('truetype');font-weight:700 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Shabnam';src:url('NotoNaskhArabic-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Shabnam';src:url('NotoNaskhArabic-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Sahel';src:url('DejaVuSans.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Amiri';src:url('Amiri-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Amiri';src:url('Amiri-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Amiri Quran';src:url('AmiriQuran.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Noto Naskh Arabic';src:url('NotoNaskhArabic-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Noto Naskh Arabic';src:url('NotoNaskhArabic-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Scheherazade New';src:url('NotoNaskhArabic-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Scheherazade New';src:url('NotoNaskhArabic-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Lateef';src:url('Amiri-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Reem Kufi';src:url('NotoKufiArabic-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Reem Kufi';src:url('NotoKufiArabic-Bold.ttf') format('truetype');font-weight:600 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Cinzel';src:url('DejaVuSerif.ttf') format('truetype');font-weight:400 900;font-style:normal;font-display:swap}
