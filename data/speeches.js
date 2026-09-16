@@ -1,0 +1,1 @@
+window.NOOR_SPEECHES_DATA = window.NOOR_SPEECHES_DATA || [];

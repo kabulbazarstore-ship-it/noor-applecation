@@ -1,0 +1,1 @@
+window.NOOR_TAQIBAT_DATA = window.NOOR_TAQIBAT_DATA || [];

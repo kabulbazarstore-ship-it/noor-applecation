@@ -1,0 +1,1 @@
+window.NOOR_MUNAJAT_DATA = window.NOOR_MUNAJAT_DATA || [];

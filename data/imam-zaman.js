@@ -1,0 +1,1 @@
+window.NOOR_IMAM_ZAMAN_DATA = window.NOOR_IMAM_ZAMAN_DATA || [];

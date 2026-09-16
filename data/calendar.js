@@ -1,0 +1,1 @@
+window.NOOR_CALENDAR_DATA = window.NOOR_CALENDAR_DATA || [];
