@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#123C32">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="fonts/noor-fonts.css">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<title>فال و استخاره | نــــور NOOR</title>
+<style>
+:root{--bg:#f8f5ee;--card:#fffdf8;--text:#17231f;--muted:#66716c;--gold:#b88a3b;--green:#123c32;--border:rgba(184,138,59,.24);--soft:rgba(184,138,59,.09);--danger:#9d3b32;}
+body.dark{--bg:#080e0c;--card:#101a16;--text:#f4efe4;--muted:#9aaea5;--gold:#d2ac5c;--green:#d2ac5c;--border:rgba(212,175,55,.18);--soft:rgba(212,175,55,.10);--danger:#e77a70;}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;min-height:100vh}.app{max-width:650px;margin:auto;padding:0 16px 40px}.head{display:flex;align-items:center;gap:10px;padding:18px 0 14px;border-bottom:1px solid var(--border)}.back,.theme{width:42px;height:42px;border:1px solid var(--border);border-radius:13px;background:var(--card);color:var(--text);display:grid;place-items:center}.back svg,.theme svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.head h1{font-size:1.15rem;margin:0;color:var(--gold);flex:1}.head small{display:block;color:var(--muted);font-size:.7rem;margin-top:3px}.hero{text-align:center;padding:24px 10px 14px}.hero-icon{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;margin:0 auto 10px;background:var(--soft);color:var(--gold);border:1px solid var(--border)}.hero-icon svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.hero h2{margin:0 0 7px;font-size:1.35rem}.hero p{margin:0;color:var(--muted);font-size:.8rem;line-height:1.9}.tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:var(--soft);padding:5px;border-radius:15px;margin:10px 0 14px}.tab{border:0;border-radius:11px;padding:11px;background:transparent;color:var(--muted);font:inherit;font-weight:800;cursor:pointer}.tab.active{background:var(--card);color:var(--gold);box-shadow:0 3px 12px rgba(0,0,0,.06)}.panel{display:none}.panel.active{display:block}.card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 20px rgba(0,0,0,.05);margin-bottom:12px}.note{font-size:.8rem;line-height:2;color:var(--muted);background:var(--soft);border:1px dashed var(--border);padding:12px;border-radius:13px}.niyat{width:100%;min-height:90px;margin-top:12px;border:1px solid var(--border);background:var(--bg);color:var(--text);border-radius:14px;padding:12px;font:inherit;resize:vertical;outline:none}.primary{width:100%;border:0;border-radius:14px;padding:13px;background:var(--green);color:#fff;font:inherit;font-weight:800;margin-top:12px;cursor:pointer}.result{margin-top:14px}.result.hidden{display:none}.result-label{font-size:.72rem;color:var(--muted);margin-bottom:7px}.result h3{margin:0;color:var(--gold);font-size:1.05rem}.ayah-ar{font-family:'Noto Naskh Arabic','Amiri',serif;font-size:1.55rem;line-height:2.2;text-align:center;margin:16px 0}.ayah-fa{font-size:.95rem;line-height:2;text-align:right}.verdict{margin-top:14px;border:1px solid var(--border);background:var(--soft);border-radius:13px;padding:12px;text-align:center;font-weight:800;color:var(--gold)}.caution{font-size:.72rem;color:var(--muted);line-height:1.8;margin-top:10px}.quran-btn{display:block;text-align:center;text-decoration:none;border:1px solid var(--border);border-radius:13px;padding:11px;margin-top:12px;color:var(--gold);font-weight:800}.loading{text-align:center;color:var(--muted);padding:18px}.footer-note{text-align:center;color:var(--muted);font-size:.68rem;line-height:1.9;margin-top:18px}.ltr{direction:ltr;display:inline-block}.hidden{display:none!important}
+</style></head>
+<body>
+<div class="app">
+<header class="head"><button class="back" id="backBtn" aria-label="بازگشت"><svg viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg></button><div style="flex:1"><h1>فال و استخاره</h1><small>نــــور | NOOR</small></div><button class="theme" id="themeBtn" aria-label="تغییر تم"><svg viewBox="0 0 24 24"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.8 6.8 0 0 0 21 12.8z"/></svg></button></header>
+<section class="hero"><div class="hero-icon"><svg viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9Z"/><path d="M19 16l.9 2.1L22 19l-2.1.9L19 22l-.9-2.1L16 19l2.1-.9Z"/></svg></div><h2>فال و استخاره قرآن</h2><p>یک آیه از قرآن برای تأمل و توجه به پیام آن</p></section>
+<div class="tabs"><button class="tab active" data-tab="fal">فال</button><button class="tab" data-tab="istikhara">استخاره</button></div>
+<section class="panel active" id="falPanel"><div class="card"><div class="note">نیت خود را در دل کنید یا کوتاه بنویسید، سپس دکمه زیر را بزنید. نتیجه یک انتخاب تصادفی از آیات قرآن است و برای پیشگویی قطعی آینده نیست.</div><textarea class="niyat" id="falNiyat" placeholder="نیت شما (اختیاری)..."></textarea><button class="primary" id="falBtn">گرفتن فال</button><div class="result hidden" id="falResult"></div></div></section>
+<section class="panel" id="istikharaPanel"><div class="card"><div class="note">لطفاً نیت کنید و ۳ صلوات با «عجّل فرجهم» بفرستید، سپس بسم الله الرحمن الرحیم بگویید و دکمه زیر را بزنید.</div><textarea class="niyat" id="istNiyat" placeholder="نیت شما (اختیاری)..."></textarea><button class="primary" id="istBtn">باز کردن استخاره</button><div class="result hidden" id="istResult"></div></div></section>
+<div class="footer-note">این صفحه برای قرائت و تأمل در آیات قرآن طراحی شده است. در امور مهم، از راهنمایی عالم دینی و مشورت آگاهانه نیز استفاده کنید.</div>
+</div>
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id);
+function noorPageUrl(file){try{return new URL('./'+String(file||''),location.href).href}catch(e){return './'+file}}
+function faNum(n){return String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d])}
+function escapeHtml(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+let quran=null,lastIds=[];
+const POS=['رحمت','مغفرت','جنت','بهشت','نعمت','رزق','نصر','فتح','سلام','آرامش','اطمینان','توکل','صبر','فلاح','هدایت','نور','مژده','ایمان','صالح','بخشش','توبه','نجات','پیروزی'];
+const NEG=['عذاب','جهنم','آتش','خسر','زیان','ظلم','گمراه','هلاک','غضب','ویل','دوزخ','کیفر','بیم','خوف','شقاوت','نار','کفر','مجرم'];
+function loadHistory(){try{lastIds=JSON.parse(localStorage.getItem('noor_fal_history')||'[]');if(!Array.isArray(lastIds))lastIds=[]}catch(e){lastIds=[]}}
+function saveHistory(id){lastIds=[id,...lastIds.filter(x=>x!==id)].slice(0,12);try{localStorage.setItem('noor_fal_history',JSON.stringify(lastIds))}catch(e){}}
+function flatten(){const out=[];(quran?.surahs||[]).forEach(s=>(s.ayahs||[]).forEach(a=>out.push({sid:s.id,surah:s.nameFa||s.nameAr||'',surahAr:s.nameAr||'',n:a.n,ar:a.ar,fa:a.fa})));return out}
+function score(v){const t=(v.ar+' '+v.fa);let p=0,n=0;POS.forEach(k=>{if(t.includes(k))p++});NEG.forEach(k=>{if(t.includes(k))n++});return p-n}
+function choose(){const all=flatten();if(!all.length)throw Error('Quran data unavailable');let pool=all.filter(x=>!lastIds.includes(x.sid+':'+x.n));if(pool.length<50)pool=all.filter(x=>!lastIds.slice(0,3).includes(x.sid+':'+x.n));return pool[Math.floor(Math.random()*pool.length)]||all[0]}
+function verdict(v,mode){const s=score(v);if(s>=2)return {title:mode==='istikhara'?'استخاره خوب':'فال نیک',text:'مضمون آیه بیشتر بر رحمت، هدایت، گشایش یا خیر دلالت دارد.'};if(s<=-2)return {title:mode==='istikhara'?'استخاره بد':'فال بد',text:'مضمون آیه بیشتر هشداردهنده است؛ آن را به‌عنوان هشدار برای دقت، توبه و مشورت در نظر بگیرید.'};return {title:mode==='istikhara'?'استخاره میانه':'با تأمل و مشورت',text:'مضمون آیه ترکیبی یا میانه است؛ برای تصمیم مهم، آیه را کامل بخوانید و مشورت کنید.'}}
+function renderResult(box,v,mode){const r=verdict(v,mode);box.classList.remove('hidden');box.innerHTML=`<div class="result-label">آیه انتخاب‌شده</div><h3>سوره ${escapeHtml(v.surah)}، آیه ${faNum(v.n)}</h3><div class="ayah-ar">${escapeHtml(v.ar)}</div><div class="ayah-fa">${escapeHtml(v.fa)}</div><div class="verdict">${r.title}<div class="caution">${r.text}</div></div><a class="quran-btn" href="${noorPageUrl('quran.html')}#surah=${v.sid}&ayah=${v.n}">مشاهده در قرآن</a>`}
+async function load(){try{const res=await fetch(noorPageUrl('quran.json'),{cache:'no-cache'});if(!res.ok)throw Error('fetch failed');quran=await res.json();if(!quran||!Array.isArray(quran.surahs)||quran.surahs.length!==114)throw Error('invalid quran');}catch(e){console.error(e);document.querySelectorAll('.primary').forEach(b=>b.disabled=true);alert('داده قرآن در دسترس نیست. لطفاً یک‌بار برنامه را در حالت آنلاین باز کنید تا نسخه آفلاین آماده شود.')}}
+function take(box,mode){try{const v=choose();saveHistory(v.sid+':'+v.n);renderResult(box,v,mode)}catch(e){alert('انتخاب آیه ممکن نشد.')}}
+$('falBtn').onclick=()=>take($('falResult'),'fal');$('istBtn').onclick=()=>take($('istResult'),'istikhara');
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));t.classList.add('active');$(t.dataset.tab+'Panel').classList.add('active')});
+$('themeBtn').onclick=()=>{document.body.classList.toggle('dark');localStorage.setItem('noor_fal_theme',document.body.classList.contains('dark')?'dark':'light')};if(localStorage.getItem('noor_fal_theme')==='dark')document.body.classList.add('dark');
+$('backBtn').onclick=()=>{if(history.length>1)history.back();else location.href=noorPageUrl('index.html')};
+loadHistory();load();
+})();
+</script>
+<script src="core/noor-navigation.js"></script><script src="core/noor-global.js"></script>
+</body></html>
