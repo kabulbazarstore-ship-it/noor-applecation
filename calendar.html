@@ -7,61 +7,40 @@
 <link rel="manifest" href="manifest.json">
 <style>
         :root {
-            --bg-body: #f8f5ee;
-            --bg-card: #fffdf8;
-            --bg-tab: rgba(0, 0, 0, 0.04);
-            --bg-tab-active: rgba(212, 175, 55, 0.10);
-            --text-primary: #17231f;
-            --text-secondary: #3d4a44;
-            --text-muted: #66716c;
-            --border-gold: rgba(184,138,59,.22);
-            --gold: #b88a3b;
-            --shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-            --radius: 18px;
-            --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            --font-base: 16px;
+            --bg-body: #f8f5ee; --bg-card: #fffdf8; --bg-tab: rgba(0, 0, 0, 0.04);
+            --bg-tab-active: rgba(212, 175, 55, 0.10); --text-primary: #17231f;
+            --text-secondary: #3d4a44; --text-muted: #66716c;
+            --border-gold: rgba(184,138,59,.22); --gold: #b88a3b;
+            --shadow: 0 4px 16px rgba(0, 0, 0, 0.04); --radius: 18px;
+            --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1); --font-base: 16px;
             --font-persian: 'Vazirmatn', Tahoma, Arial, sans-serif;
-            --red: #c0392b;
-            --green: #27ae60;
+            --red: #c0392b; --green: #27ae60;
         }
-
         body.dark-mode {
-            --bg-body: #080e0c;
-            --bg-card: #101a16;
-            --bg-tab: rgba(255, 255, 255, 0.04);
-            --bg-tab-active: rgba(212, 175, 55, 0.12);
-            --text-primary: #f4efe4;
-            --text-secondary: #b0c0b8;
-            --text-muted: #6a8a80;
-            --border-gold: rgba(212, 175, 55, 0.15);
-            --gold: #d2ac5c;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            --red: #e74c3c;
-            --green: #2ecc71;
+            --bg-body: #080e0c; --bg-card: #101a16; --bg-tab: rgba(255, 255, 255, 0.04);
+            --bg-tab-active: rgba(212, 175, 55, 0.12); --text-primary: #f4efe4;
+            --text-secondary: #b0c0b8; --text-muted: #6a8a80;
+            --border-gold: rgba(212, 175, 55, 0.15); --gold: #d2ac5c;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.3); --red: #e74c3c; --green: #2ecc71;
         }
-
         * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
         body { background: var(--bg-body); color: var(--text-primary); font-family: var(--font-persian); font-size: var(--font-base); direction: rtl; transition: background var(--transition), color var(--transition); min-height: 100vh; padding: 0 0 30px 0; }
         button, input, select { font-family: inherit; }
         button { border: 0; cursor: pointer; background: none; display: inline-flex; align-items: center; justify-content: center; }
         .app { max-width: 650px; margin: 0 auto; padding: 0 16px 35px; }
-
         .icon { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
         .icon-sm { width: 16px; height: 16px; }
-
         .header { display: flex; align-items: center; justify-content: space-between; padding: 20px 0 14px; gap: 8px; flex-wrap: wrap; border-bottom: 1px solid var(--border-gold); }
         .brand { display: flex; align-items: center; gap: 12px; }
-        .brand-icon { width: 52px; height: 40px; border-radius: 10px; background: var(--bg-tab); color: var(--gold); display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-gold); overflow:hidden; }
-        .brand-icon img{width:34px;height:34px;object-fit:cover;border-radius:8px;}
+        .brand-icon { width: 52px; height: 52px; border-radius: 12px; background: var(--bg-tab); display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-gold); overflow: hidden; }
+        .brand-icon img { width: 100%; height: 100%; object-fit: cover; border-radius: 11px; }
         .brand-text h1 { margin: 0; font-size: calc(var(--font-base) * 1.3); font-weight: 800; color: var(--text-primary); }
         .brand-text span { color: var(--text-muted); font-size: calc(var(--font-base) * 0.7); font-weight: 500; display: block; }
         .header-controls button { background: var(--bg-tab); border: 1px solid var(--border-gold); border-radius: 30px; padding: 6px 12px; color: var(--text-secondary); transition: var(--transition); }
-
         .card { background: var(--bg-card); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); border: 1px solid var(--border-gold); margin-bottom: 18px; transition: var(--transition); }
         .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; border-bottom: 1px solid var(--border-gold); padding-bottom: 10px; }
         .card-header h2 { font-size: calc(var(--font-base) * 1.05); font-weight: 700; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
         .card-header h2 svg { color: var(--gold); }
-
         .today-card { text-align: center; }
         .today-day { font-size: calc(var(--font-base) * 1.5); font-weight: 800; margin: 6px 0; color: var(--text-primary); }
         .today-dates { display: flex; flex-direction: column; gap: 4px; color: var(--text-secondary); font-size: calc(var(--font-base) * 0.85); }
@@ -69,12 +48,10 @@
         .msg-congrats { background: rgba(39, 174, 96, 0.1); color: var(--green); border: 1px solid var(--green); }
         .msg-condolence { background: rgba(192, 57, 43, 0.1); color: var(--red); border: 1px solid var(--red); }
         .msg-neutral { background: var(--bg-tab); color: var(--text-primary); border: 1px solid var(--border-gold); }
-
         .action-item { display: flex; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--border-gold); gap: 12px; }
         .action-item:last-child { border-bottom: none; }
         .action-item .action-info { display: flex; align-items: center; gap: 12px; flex: 1; }
         .action-title { font-size: calc(var(--font-base) * 0.95); font-weight: 600; color: var(--text-primary); }
-
         .next-prayer-box { text-align: center; padding: 14px; background: var(--bg-tab-active); border-radius: 14px; border: 1px dashed var(--gold); }
         .today-dhikr{margin-top:12px;padding:13px 14px;border-radius:16px;background:linear-gradient(135deg,var(--bg-tab-active),var(--bg-card));border:1px solid var(--border-gold);text-align:center;}
         .today-dhikr .label{font-size:.68rem;color:var(--gold);font-weight:800;}
@@ -83,23 +60,15 @@
         .next-prayer-box .label { font-size: 0.8rem; color: var(--text-secondary); }
         .next-prayer-box .name { font-size: 1.3rem; font-weight: 800; color: var(--gold); margin: 4px 0; }
         .next-prayer-box .countdown { font-size: 1.6rem; font-weight: 800; color: var(--text-primary); font-variant-numeric: tabular-nums; letter-spacing: 2px; }
-
         .prayer-grid-8 { grid-template-columns: repeat(4, 1fr); }
         @media(max-width:520px){ .prayer-grid-8{grid-template-columns:repeat(2,1fr);} }
         .prayer-method-line { text-align:center; margin-top:10px; font-size:.72rem; color:var(--text-muted); }
         .location-note { text-align:center; margin-top:8px; font-size:.72rem; color:var(--text-muted); }
-        .settings-note { font-size:.72rem; line-height:1.8; color:var(--text-muted); background:var(--bg-tab); border:1px dashed var(--border-gold); padding:10px 12px; border-radius:12px; margin-top:10px; }
         .persistent-status { font-size:.72rem; line-height:1.8; color:var(--text-secondary); background:var(--bg-tab); border:1px solid var(--border-gold); padding:10px 12px; border-radius:12px; margin-top:10px; }
         .persistent-status strong { color:var(--gold); }
         .top-date-notification{background:linear-gradient(135deg,var(--bg-card),var(--bg-tab-active));border:1px solid var(--gold);border-radius:20px;box-shadow:0 10px 28px rgba(0,0,0,.08);padding:14px 16px;margin:18px 0;display:flex;align-items:center;gap:13px;}
-        .top-date-icon{width:48px;height:48px;flex:0 0 48px;border-radius:14px;overflow:hidden;border:1px solid var(--border-gold);background:var(--bg-tab);display:grid;place-items:center;}
-        .top-date-icon img{width:100%;height:100%;object-fit:cover;}
-        .top-date-main{display:flex;flex-direction:column;gap:2px;min-width:0;}
-        .top-date-main .notice-label{font-size:.68rem;color:var(--gold);font-weight:800;}
-        .top-date-main strong{font-size:.92rem;color:var(--text-primary);}
-        .top-date-main span:not(.notice-label){font-size:.72rem;color:var(--text-secondary);}
-        .top-date-icon{width:44px;height:44px;border-radius:14px;background:var(--bg-tab-active);color:var(--gold);display:grid;place-items:center;flex:0 0 auto;}
-        .top-date-icon img{width:30px;height:30px;border-radius:20%;display:block;object-fit:cover;}
+        .top-date-icon{width:52px;height:52px;flex:0 0 52px;border-radius:14px;overflow:hidden;border:1px solid var(--border-gold);background:var(--bg-tab);}
+        .top-date-icon img{width:100%;height:100%;object-fit:cover;border-radius:13px;display:block;}
         .top-date-main{min-width:0;flex:1;}
         .top-date-main strong{display:block;font-size:1rem;color:var(--text-primary);margin-bottom:4px;}
         .top-date-main span{display:block;color:var(--text-secondary);font-size:.76rem;line-height:1.8;}
@@ -109,12 +78,10 @@
             width:100%; min-height:42px; border-radius:12px; border:1px solid var(--border-gold);
             background:var(--bg-body); color:var(--text-primary); padding:8px 10px; outline:none;
         }
-
         .athan-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; text-align: center; }
         .athan-item { background: var(--bg-tab); padding: 8px 4px; border-radius: 12px; border: 1px solid var(--border-gold); }
         .athan-item span { display: block; font-size: calc(var(--font-base) * 0.65); color: var(--text-muted); }
         .athan-item strong { display: block; font-size: calc(var(--font-base) * 0.9); color: var(--gold); margin-top: 4px; }
-
         .qibla-container { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px; }
         .compass-wrapper { position: relative; width: 180px; height: 180px; margin: 10px auto; }
         .compass { width: 100%; height: 100%; border-radius: 50%; border: 2px solid var(--border-gold); position: relative; background: var(--bg-tab); box-shadow: inset 0 0 30px rgba(0,0,0,0.08); }
@@ -126,9 +93,7 @@
         .qibla-info { text-align: center; font-size: 0.8rem; color: var(--text-secondary); margin-top: 8px; }
         .qibla-info strong { color: var(--gold); }
         .calibration-hint { font-size: 0.7rem; color: var(--text-muted); margin-top: 6px; text-align: center; }
-
         .btn-view { padding: 8px 16px; background: var(--bg-tab); border: 1px solid var(--border-gold); border-radius: 20px; color: var(--gold); font-size: calc(var(--font-base) * 0.8); font-weight: 600; transition: var(--transition); }
-
         .calendar-card { padding: 18px 16px; }
         .month-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
         .month-title { text-align: center; flex: 1; }
@@ -149,24 +114,20 @@
         .day.event::after { content: ""; position: absolute; bottom: 4px; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
         .day.holiday .day-number { color: var(--red); }
         .day.holiday.event::after { background: var(--red); }
-
         .history-item { padding: 10px 0; border-bottom: 1px dashed var(--border-gold); }
         .history-item:last-child { border-bottom: none; }
         .history-year { color: var(--gold); font-size: calc(var(--font-base) * 0.75); font-weight: 700; }
         .history-title { font-size: calc(var(--font-base) * 0.9); font-weight: 600; }
         .history-desc { font-size: calc(var(--font-base) * 0.75); color: var(--text-secondary); margin-top: 4px; }
-
         .modal { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6); display: none; align-items: flex-end; justify-content: center; z-index: 1000; padding: 0 12px 12px; backdrop-filter: blur(4px); }
         .modal.show { display: flex; }
         .modal-box { width: 100%; max-width: 650px; max-height: 90vh; overflow-y: auto; background: var(--bg-card); border-radius: 28px 28px 20px 20px; padding: 24px 20px; border: 1px solid var(--border-gold); }
         .modal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
         .modal-head h3 { font-size: calc(var(--font-base) * 1.2); font-weight: 700; }
         .close-btn { width: 40px; height: 40px; border-radius: 12px; background: var(--bg-tab); color: var(--text-secondary); border: 1px solid var(--border-gold); }
-
         .bottom-nav { position: sticky; bottom: 12px; margin-top: 24px; background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 24px; padding: 6px; display: flex; justify-content: space-around; box-shadow: var(--shadow); }
         .bottom-nav button { background: transparent; color: var(--text-secondary); padding: 8px 14px; border-radius: 16px; font-size: calc(var(--font-base) * 0.7); font-weight: 500; display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1; }
         .bottom-nav button.active { background: var(--bg-tab-active); color: var(--gold); }
-
         .athan-overlay { position: fixed; inset: 0; background: linear-gradient(160deg, #0b0e1a 0%, #1a1f35 100%); color: #fff; display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; padding: 30px 20px; text-align: center; }
         .athan-overlay.show { display: flex; }
         .athan-overlay .prayer-name { font-size: 2.2rem; font-weight: 800; color: var(--gold); margin-bottom: 6px; }
@@ -178,7 +139,6 @@
         .athan-overlay .controls { display: flex; gap: 12px; margin-top: 20px; width: 100%; max-width: 400px; }
         .athan-overlay .controls button { flex: 1; padding: 14px; border-radius: 30px; font-size: 0.9rem; font-weight: 700; border: 1px solid var(--gold); background: rgba(212, 175, 55, 0.1); color: var(--gold); }
         .athan-overlay .controls button.mute { background: var(--red); color: #fff; border-color: var(--red); }
-
         .setting-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border-gold); gap: 8px; }
         .setting-row:last-child { border-bottom: none; }
         .setting-row label { font-size: 0.85rem; font-weight: 600; color: var(--text-primary); flex: 1; }
@@ -188,9 +148,7 @@
         .switch span { display: block; width: 20px; height: 20px; border-radius: 50%; background: white; transition: 0.2s; }
         .switch.on { background: var(--gold); }
         .switch.on span { transform: translateX(-20px); }
-
         .subsection-title { font-size: 0.85rem; font-weight: 700; color: var(--gold); margin: 16px 0 8px; padding-bottom: 6px; border-bottom: 1px solid var(--border-gold); }
-
         @media (max-width: 420px) {
             .app { padding: 0 10px 25px; }
             .day { min-height: 50px; }
@@ -198,12 +156,10 @@
             .athan-item span { font-size: 0.55rem; }
             .athan-item strong { font-size: 0.8rem; }
         }
-    
 .prayer-hero{position:relative;overflow:hidden;border-radius:28px;margin:14px 0 18px;padding:22px 18px;color:#fff;background:linear-gradient(145deg,#0a3d30 0%,#123c32 58%,#1f624f 100%);box-shadow:0 16px 38px rgba(18,60,50,.18);border:1px solid rgba(184,138,59,.28)}
 .prayer-hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 18%,rgba(212,175,55,.20),transparent 30%),radial-gradient(circle at 20% 90%,rgba(255,255,255,.08),transparent 35%);pointer-events:none}
 .prayer-hero>*{position:relative;z-index:1}.prayer-hero-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.prayer-hero-city{font-size:.72rem;opacity:.82}.prayer-hero-date{font-family:'Amiri',serif;font-size:.82rem;color:#ead59b}.prayer-hero-name{margin-top:14px;font-weight:700;font-size:.9rem}.prayer-hero-time{font-family:'Amiri',serif;font-size:3rem;line-height:1.05;color:#f2d88e;margin:4px 0 10px;text-shadow:0 6px 20px rgba(0,0,0,.18)}
 .prayer-hero-controls{display:flex;gap:8px;align-items:center}.prayer-hero-btn{min-height:44px;padding:8px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:#fff;font-family:inherit;font-weight:700;gap:7px}.prayer-hero-btn.main{background:#b88a3b;border-color:#b88a3b}.prayer-hero-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-
 </style>
 <link rel="stylesheet" href="fonts/noor-fonts.css">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
@@ -219,10 +175,9 @@
     </script>
 
     <div class="app">
-        <!-- HEADER -->
         <header class="header">
             <div class="brand">
-                <div class="brand-icon"><img src="assets/icon-192.png" alt="آیکون نور"></div>
+                <div class="brand-icon"><img src="assets/icon-192.png" alt="نور"></div>
                 <div class="brand-text">
                     <h1>تقویم</h1>
                     <span>NOOR | نور</span>
@@ -236,7 +191,7 @@
         </header>
 
         <section class="top-date-notification" aria-label="اعلان تقویم امروز">
-            <div class="top-date-icon"><img src="assets/icon-192.png" alt="آیکون نور"></div>
+            <div class="top-date-icon"><img src="assets/icon-192.png" alt="نور"></div>
             <div class="top-date-main">
                 <span class="notice-label">تقویم امروز</span>
                 <strong id="topAfghanDate">—</strong>
@@ -255,7 +210,6 @@
   </div>
 </section>
 
-<!-- TODAY IN NOOR -->
         <section class="card today-card">
             <div class="card-header" style="border: none; padding: 0; margin-bottom: 10px; justify-content: center;">
                 <h2 style="color: var(--gold); font-size: 0.9rem;">امروز در نور</h2>
@@ -269,7 +223,6 @@
             <div id="todayMessageContainer"></div>
         </section>
 
-        <!-- NEXT PRAYER COUNTDOWN -->
         <section class="card">
             <div class="next-prayer-box">
                 <div class="label">نماز بعدی</div>
@@ -279,7 +232,6 @@
             </div>
         </section>
 
-        <!-- TODAY ACTIONS -->
         <section class="card">
             <div class="card-header">
                 <h2>
@@ -290,7 +242,6 @@
             <div id="todayActionsList"></div>
         </section>
 
-        <!-- ATHAN & QIBLA -->
         <section class="card">
             <div class="card-header">
                 <h2>
@@ -331,7 +282,6 @@
             </div>
         </section>
 
-        <!-- UPCOMING EVENTS -->
         <section class="card">
             <div class="card-header">
                 <h2>
@@ -343,7 +293,6 @@
             <div id="countdownContainer"></div>
         </section>
 
-        <!-- CALENDAR -->
         <section class="card calendar-card">
             <div class="month-header">
                 <button class="nav-btn" id="prevMonth">
@@ -364,7 +313,6 @@
             <div class="days" id="calendarDays"></div>
         </section>
 
-        <!-- AFGHAN HISTORY -->
         <section class="card" id="afghanHistoryCard" style="display: none;">
             <div class="card-header">
                 <h2>
@@ -375,7 +323,6 @@
             <div id="afghanHistoryList"></div>
         </section>
 
-        <!-- BOTTOM NAV -->
         <nav class="bottom-nav">
             <button class="active" onclick="goToday()"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="3" y1="10" x2="21" y2="10"></line></svg> تقویم</button>
             <button onclick="goToTodayActions()"><svg class="icon" viewBox="0 0 24 24"><path d="M4 5h16v15H4z"></path><path d="M8 3v4M16 3v4M4 9h16"></path><path d="M8 13h3M13 13h3M8 17h3"></path></svg> اعمال و مناسبت‌ها</button>
@@ -384,13 +331,11 @@
         </nav>
     </div>
 
-    <!-- ATHAN AUDIO -->
+    <!-- AUDIO - 3 صدا -->
     <audio id="athanAudio1" preload="auto" src="murtaza-fatimi.mp3"></audio>
     <audio id="athanAudio2" preload="auto" src="moazzenzadeh.mp3"></audio>
     <audio id="athanAudio3" preload="auto" src="sobhdel.mp3"></audio>
-    <audio id="athanAudio4" preload="auto" src="delnishin-azan.mp3"></audio>
 
-    <!-- FULL SCREEN ATHAN PLAYER -->
     <div class="athan-overlay" id="athanOverlay">
         <div class="prayer-name" id="athanPrayerName">اذان</div>
         <div class="city-name" id="athanCityName">کابل، افغانستان</div>
@@ -409,7 +354,6 @@
         </div>
     </div>
 
-    <!-- DAY MODAL -->
     <div class="modal" id="dayModal">
         <div class="modal-box">
             <div class="modal-head">
@@ -420,7 +364,6 @@
         </div>
     </div>
 
-    <!-- SETTINGS MODAL -->
     <div class="modal" id="settingsModal">
         <div class="modal-box">
             <div class="modal-head">
@@ -440,7 +383,6 @@
         </div>
     </div>
 
-    <!-- ATHAN SETTINGS MODAL -->
     <div class="modal" id="athanSettingsModal">
         <div class="modal-box">
             <div class="modal-head">
@@ -484,10 +426,9 @@
                 <div class="setting-row">
                     <label>انتخاب صدا</label>
                     <select id="athanSoundSelect">
-                        <option value="1">مرتضی فاطمی (شیعه)</option>
-                        <option value="2">موذن‌زاده اردبیلی (شیعه)</option>
-                        <option value="3">صبح‌دل (شیعه)</option>
-                        <option value="4">دلنشین — اهل‌سنت</option>
+                        <option value="1">مرتضی فاطمی</option>
+                        <option value="2">موذن‌زاده اردبیلی</option>
+                        <option value="3">صبح‌دل</option>
                     </select>
                 </div>
                 <div class="setting-row">
@@ -513,12 +454,13 @@
                     <div class="switch on" id="showAthanScreenSwitch"><span></span></div>
                 </div>
 
-                <div class="subsection-title">اعلان‌ها</div>
+                <div class="subsection-title">اعلان دائمی اوقات شرعی</div>
                 <div class="setting-row">
-                    <label>اعلان تقویم در نوار اعلان</label>
+                    <label>نمایش اعلان دائمی NOOR</label>
                     <div class="switch" id="persistentNotificationSwitch" role="switch" aria-checked="false" tabindex="0"><span></span></div>
                 </div>
-                <div style="font-size:.68rem;color:var(--text-muted);line-height:1.8;margin-top:-6px;">پس از فعال‌سازی، اجازه اعلان را در تنظیمات گوشی نیز مجاز کنید. نسخه وب/PWA فقط در محدوده پشتیبانی مرورگر می‌تواند اعلان پس‌زمینه را مدیریت کند.</div>
+                <button class="btn-view" id="persistentNotificationBtn" type="button" style="width:100%;margin-top:4px;">فعال‌سازی اعلان دائمی</button>
+                <div class="persistent-status" id="persistentNotificationStatus">اعلان دائمی خاموش است.</div>
 
                 <div class="subsection-title">زمان اعلان اذان (دقیقه قبل/بعد)</div>
                 <div class="setting-row"><label>اذان صبح</label><select id="fajrOffset"></select></div>
@@ -526,45 +468,34 @@
                 <div class="setting-row"><label>اذان عصر</label><select id="asrOffset"></select></div>
                 <div class="setting-row"><label>اذان مغرب</label><select id="maghribOffset"></select></div>
                 <div class="setting-row"><label>اذان عشاء</label><select id="ishaOffset"></select></div>
-
-                <div class="subsection-title">نمایش</div>
             </div>
         </div>
     </div>
 
     <script>
         // =========================================================
-        // 0. AUDIO SOURCES
+        // 0. AUDIO - 3 فایل صوتی
         // =========================================================
-        window.addEventListener('DOMContentLoaded', function() {
-            ['murtaza-fatimi.mp3','moazzenzadeh.mp3','sobhdel.mp3','delnishin-azan.mp3'].forEach((file,i)=>{
-                const a=document.getElementById('athanAudio'+(i+1));
-                if(a){a.src=encodeURI(file);a.load();}
-            });
-        });
+        const ATHAN_FILES = {
+            '1': 'murtaza-fatimi.mp3',
+            '2': 'moazzenzadeh.mp3',
+            '3': 'sobhdel.mp3'
+        };
+        const VALID_SOUNDS = ['1','2','3'];
 
         // =========================================================
         // 1. NOTIFICATION SYSTEM
         // =========================================================
         function requestNotificationPermission() {
-            if (!("Notification" in window)) {
-                alert("مرورگر شما از اعلان پشتیبانی نمی‌کند.");
-                return;
-            }
-            if (Notification.permission === "granted") {
-                showTodayNotification();
-                alert("اعلان‌ها قبلاً فعال شده‌اند.");
-                return;
-            }
+            if (!("Notification" in window)) { alert("مرورگر شما از اعلان پشتیبانی نمی‌کند."); return; }
+            if (Notification.permission === "granted") { showTodayNotification(); alert("اعلان‌ها قبلاً فعال شده‌اند."); return; }
             Notification.requestPermission().then(perm => {
                 if (perm === "granted") {
                     localStorage.setItem('noorNotifyEnabled', 'true');
                     showTodayNotification();
                     if(localStorage.getItem('noorPersistentNotification')==='true') updatePersistentNotification(true);
                     alert("اعلان‌های NOOR فعال شد.");
-                } else {
-                    alert("دسترسی اعلان رد شد. برای فعال‌سازی، از تنظیمات گوشی اقدام کنید.");
-                }
+                } else { alert("دسترسی اعلان رد شد. برای فعال‌سازی، از تنظیمات گوشی اقدام کنید."); }
             });
         }
 
@@ -574,15 +505,13 @@
             const j = gregorianToJalali(d.getFullYear(), d.getMonth() + 1, d.getDate());
             const islamic = getIslamicDate(d);
             const weekday = WEEKDAYS[(d.getDay() + 1) % 7];
-
             const title = "نــــور | تقویم امروز";
             const body = `${weekday} ${faNumber(j[2])} ${SOLAR_MONTHS[j[1]-1]} ${faNumber(j[0])}\n${faNumber(d.getDate())} ${GREGORIAN_MONTHS_FA[d.getMonth()]} ${faNumber(d.getFullYear())} • ${faNumber(islamic.day)} ${ISLAMIC_MONTHS[islamic.month]} ${faNumber(islamic.year)}`;
-
             try {
                 if(navigator.serviceWorker){
                     navigator.serviceWorker.getRegistration().then(reg=>{
                         if(reg && reg.showNotification){
-                            return reg.showNotification(title,{body,icon:'assets/icon-192.png',badge:'assets/icon-72.png',tag:'noor-calendar-today',renotify:true,dir:'rtl',lang:'fa'});
+                            return reg.showNotification(title,{body,icon:'assets/icon-192.png',badge:'assets/icon-192.png',tag:'noor-calendar-today',renotify:true,dir:'rtl',lang:'fa'});
                         }
                         const notification=new Notification(title,{body,icon:'assets/icon-192.png',tag:'noor-calendar-today',dir:'rtl',lang:'fa'});
                         notification.onclick=()=>{window.focus();notification.close();};
@@ -603,7 +532,6 @@
             const targetKey = `${h}:${m}`;
             const lastNotified = localStorage.getItem('lastDailyNotify');
             const todayKey = now.toDateString();
-            
             if (nowKey === targetKey && lastNotified !== todayKey) {
                 localStorage.setItem('lastDailyNotify', todayKey);
                 showTodayNotification();
@@ -651,7 +579,7 @@
         const KAABA = { lat: 21.422574, lng: 39.826234 };
 
         // =========================================================
-        // 3. PRAYER TIME CALCULATION — OFFLINE
+        // 3. PRAYER TIME CALCULATION
         // =========================================================
         const PRAYER_METHODS = {
             jafari:{name:"جعفری (شیعه)",fajr:16,maghrib:4,isha:14,asrFactor:1},
@@ -794,9 +722,6 @@
             };
         }
 
-        function calculateMidnight(times,tomorrowTimes){ return calculateNightTimes(times,tomorrowTimes).midnight; }
-        function calculateOneThirdNight(times,tomorrowTimes){ return calculateNightTimes(times,tomorrowTimes).oneThird; }
-
         function getPrayerLocation(){
             const useGps=localStorage.getItem('noorUseGps')==='true';
             const gpsLat=parseFloat(localStorage.getItem('noorGpsLat'));
@@ -880,7 +805,6 @@
         const SOLAR_MONTHS = ["حمل", "ثور", "جوزا", "سرطان", "اسد", "سنبله", "میزان", "عقرب", "قوس", "جدی", "دلو", "حوت"];
         const WEEKDAYS = ["شنبه", "یکشنبه", "دوشنبه", "سه‌شنبه", "چهارشنبه", "پنجشنبه", "جمعه"];
         const ISLAMIC_MONTHS = ["", "محرم", "صفر", "ربیع‌الاول", "ربیع‌الثانی", "جمادی‌الاول", "جمادی‌الثانی", "رجب", "شعبان", "رمضان", "شوال", "ذی‌القعده", "ذی‌الحجه"];
-
         const DHIKR_DAY = {
             "شنبه": "یا رَبَّ الْعالَمین",
             "یکشنبه": "یا ذَا الْجَلالِ وَالْإِکْرام",
@@ -966,9 +890,7 @@
             { id: "afg_5", title: "روز معلم", category: "cultural", solar: "3-3", description: "۳ میزان - روز معلم در افغانستان" }
         ];
 
-        // =========================================================
         // 6. STATE
-        // =========================================================
         let now = new Date();
         let currentSolar = gregorianToJalali(now.getFullYear(), now.getMonth() + 1, now.getDate());
         let viewYear = currentSolar[0];
@@ -978,9 +900,7 @@
         let lastAthanMinute = "";
         let dailyNotifyInterval = null;
 
-        // =========================================================
         // 7. CORE FUNCTIONS
-        // =========================================================
         function getEventsForDate(y, m, d) {
             const result = [];
             const solarKey = `${m}-${d}`;
@@ -995,9 +915,7 @@
             return result;
         }
 
-        // =========================================================
         // 8. RENDER
-        // =========================================================
         function updateTodaySection() {
             const d = new Date();
             const j = gregorianToJalali(d.getFullYear(), d.getMonth() + 1, d.getDate());
@@ -1015,7 +933,6 @@
             if (events.length > 0) {
                 const hasCongrats = events.some(e => e.category === "wiladat" || e.category === "eid");
                 const hasCondolence = events.some(e => e.category === "shahadat" || e.category === "wafat" || e.category === "fatimiyya");
-                
                 if (hasCongrats) {
                     const e = events.find(ev => ev.category === "wiladat" || ev.category === "eid");
                     msgContainer.innerHTML = `<div class="today-message msg-congrats">تبریک! امروز ${e.title} است.</div>` + dhikrHtml;
@@ -1187,9 +1104,7 @@
             });
         }
 
-        // =========================================================
         // 9. NEXT PRAYER COUNTDOWN
-        // =========================================================
         function getNextPrayer(now=new Date()){
             const current=now instanceof Date && !Number.isNaN(now.getTime()) ? now : new Date();
             let times=window._prayerTimes;
@@ -1246,9 +1161,7 @@
             if(timeEl) timeEl.textContent=next.time||'04:30';
         }
 
-        // =========================================================
         // 10. MODALS
-        // =========================================================
         function openDay(y, m, d) {
             const greg = jalaliToGregorian(y, m, d);
             const date = new Date(greg[0], greg[1] - 1, greg[2]);
@@ -1288,10 +1201,7 @@
         function closeModal(id) { document.getElementById(id).classList.remove("show"); }
 
         function requestGpsLocation(){
-            if(!navigator.geolocation){
-                alert("مرورگر این دستگاه از موقعیت مکانی پشتیبانی نمی‌کند.");
-                return;
-            }
+            if(!navigator.geolocation){ alert("مرورگر این دستگاه از موقعیت مکانی پشتیبانی نمی‌کند."); return; }
             navigator.geolocation.getCurrentPosition(
                 pos => {
                     localStorage.setItem("noorGpsLat", String(pos.coords.latitude));
@@ -1302,14 +1212,11 @@
                     updatePrayerTimes();
                     initQibla(true);
                     updateNextPrayerCountdown();
+                    updatePrayerHero();
                     alert("موقعیت فعلی با موفقیت دریافت شد.");
                 },
                 err => {
-                    const messages = {
-                        1:"اجازه دسترسی به موقعیت داده نشد.",
-                        2:"موقعیت فعلی پیدا نشد.",
-                        3:"زمان دریافت موقعیت تمام شد."
-                    };
+                    const messages = { 1:"اجازه دسترسی به موقعیت داده نشد.", 2:"موقعیت فعلی پیدا نشد.", 3:"زمان دریافت موقعیت تمام شد." };
                     alert(messages[err.code] || "دریافت موقعیت ناموفق بود.");
                 },
                 {enableHighAccuracy:true, timeout:12000, maximumAge:300000}
@@ -1317,7 +1224,7 @@
         }
 
         // =========================================================
-        // 11. QIBLA
+        // 11. QIBLA — با GPS دقیق
         // =========================================================
         function calculateQiblaBearing(userLat, userLng) {
             const D2R = Math.PI / 180, R2D = 180 / Math.PI;
@@ -1330,16 +1237,19 @@
             return (Math.atan2(y, x) * R2D + 360) % 360;
         }
 
+        let qiblaCompassHandler = null;
+        let qiblaLastHeading = 0;
+        let qiblaSmoothing = 0.15;
+
         function initQibla(forceRefresh) {
             const needle = document.getElementById("qiblaNeedle");
             const status = document.getElementById("qiblaStatus");
-            const loc = getPrayerLocation();
             const city = CITIES[localStorage.getItem('noorCity') || 'kabul'] || CITIES.kabul;
             const useGps = localStorage.getItem('noorUseGps') === 'true';
 
             const applyQibla = (lat, lng, source) => {
                 const bearing = calculateQiblaBearing(lat, lng);
-                status.innerHTML = `قبله از موقعیت <strong>${source}</strong>: <strong>${faNumber(Math.round(bearing))}°</strong> از شمال`;
+                status.innerHTML = `قبله از موقعیت <strong>${source}</strong>: <strong>${faNumber(bearing.toFixed(1))}°</strong> از شمال`;
 
                 const handleOrientation = (event) => {
                     let heading = null;
@@ -1349,36 +1259,65 @@
                         heading = (360 - event.alpha) % 360;
                     }
                     if (Number.isFinite(heading)) {
-                        const rotation = ((bearing - heading + 540) % 360) - 180;
+                        // فیلتر نرم برای کاهش لرزش
+                        let delta = heading - qiblaLastHeading;
+                        if (delta > 180) delta -= 360;
+                        if (delta < -180) delta += 360;
+                        qiblaLastHeading = (qiblaLastHeading + qiblaSmoothing * delta + 360) % 360;
+                        const rotation = ((bearing - qiblaLastHeading + 540) % 360) - 180;
                         needle.style.transform = `rotate(${rotation}deg)`;
                         status.innerHTML = `قبله از موقعیت <strong>${source}</strong>: <strong>${faNumber(bearing.toFixed(1))}°</strong> از شمال • انحراف گوشی: <strong>${faNumber(Math.abs(rotation).toFixed(1))}°</strong>`;
                     }
                 };
 
                 if (window.DeviceOrientationEvent) {
-                    if (window._noorQiblaHandler) {
-                        window.removeEventListener("deviceorientationabsolute", window._noorQiblaHandler, true);
-                        window.removeEventListener("deviceorientation", window._noorQiblaHandler, true);
+                    if (qiblaCompassHandler) {
+                        window.removeEventListener("deviceorientationabsolute", qiblaCompassHandler, true);
+                        window.removeEventListener("deviceorientation", qiblaCompassHandler, true);
                     }
-                    window._noorQiblaHandler = handleOrientation;
-                    window.addEventListener("deviceorientationabsolute", handleOrientation, true);
-                    window.addEventListener("deviceorientation", handleOrientation, true);
+                    qiblaCompassHandler = handleOrientation;
+                    // اول تلاش برای absolute، بعد عادی
+                    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+                        DeviceOrientationEvent.requestPermission().then(resp => {
+                            if (resp === 'granted') {
+                                window.addEventListener("deviceorientationabsolute", handleOrientation, true);
+                                window.addEventListener("deviceorientation", handleOrientation, true);
+                            } else {
+                                status.innerHTML += `<br><small style="color: var(--red);">دسترسی حسگر جهت‌یابی داده نشد</small>`;
+                            }
+                        }).catch(() => {
+                            window.addEventListener("deviceorientationabsolute", handleOrientation, true);
+                            window.addEventListener("deviceorientation", handleOrientation, true);
+                        });
+                    } else {
+                        window.addEventListener("deviceorientationabsolute", handleOrientation, true);
+                        window.addEventListener("deviceorientation", handleOrientation, true);
+                    }
                 } else {
                     status.innerHTML += `<br><small style="color: var(--red);">حسگر جهت‌یابی پشتیبانی نمی‌شود</small>`;
                 }
             };
 
+            // همیشه GPS را امتحان کن اگر GPS فعال یا forceRefresh
             if (useGps || forceRefresh) {
                 if (!navigator.geolocation) {
                     status.textContent = "GPS پشتیبانی نمی‌شود. از موقعیت شهر استفاده می‌شود.";
                     applyQibla(city.lat, city.lng, city.name);
                     return;
                 }
-                status.textContent = "در حال دریافت موقعیت مکانی...";
+                status.textContent = "در حال دریافت موقعیت مکانی از GPS...";
                 navigator.geolocation.getCurrentPosition(
-                    (pos) => applyQibla(pos.coords.latitude, pos.coords.longitude, "موقعیت فعلی (GPS)"),
-                    (err) => applyQibla(city.lat, city.lng, city.name),
-                    { enableHighAccuracy: true, timeout: 8000 }
+                    (pos) => {
+                        // ذخیره در localStorage برای استفاده‌های بعدی
+                        localStorage.setItem("noorGpsLat", String(pos.coords.latitude));
+                        localStorage.setItem("noorGpsLng", String(pos.coords.longitude));
+                        applyQibla(pos.coords.latitude, pos.coords.longitude, "موقعیت فعلی (GPS)");
+                    },
+                    (err) => {
+                        console.warn('GPS error:', err);
+                        applyQibla(city.lat, city.lng, city.name + " (GPS در دسترس نبود)");
+                    },
+                    { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
                 );
             } else {
                 applyQibla(city.lat, city.lng, city.name);
@@ -1394,41 +1333,49 @@
 
         function unlockAthanAudio(){
             if(noorMediaUnlocked) return;
-            const a=getSelectedAudio(); if(!a) return;
+            const a=getSelectedAudio(); if(!a || !a.src) return;
             const oldVol=a.volume; a.volume=0;
             a.play().then(()=>{a.pause();a.currentTime=0;a.volume=oldVol;noorMediaUnlocked=true;}).catch(()=>{a.volume=oldVol;});
         }
         document.addEventListener('click', unlockAthanAudio, {once:true, passive:true});
 
-        // =========================================================
-        // ✅ اصلاح اصلی: تابع انتخاب فایل صوتی — پشتیبانی کامل از گزینه ۴
-        // =========================================================
         function getSelectedAudio() {
             let soundNum = localStorage.getItem('noorAthanSound') || '1';
-            const method = localStorage.getItem('noorPrayerMethod') || 'jafari';
-            if(method === 'hanafi') soundNum = '4';
-            // ✅ حالا ۴ گزینه (1,2,3,4) پشتیبانی می‌شوند
-            if(!['1','2','3','4'].includes(soundNum)) soundNum = '1';
+            if(!VALID_SOUNDS.includes(soundNum)) soundNum = '1';
             return document.getElementById('athanAudio'+soundNum);
         }
 
         function playAthanManually() {
             const audio = getSelectedAudio();
-            const all = [1,2,3,4].map(n=>document.getElementById('athanAudio'+n)).filter(Boolean);
-            all.forEach(a => { if (a !== audio) { a.pause(); a.currentTime = 0; } });
+            if(!audio) return;
+            VALID_SOUNDS.forEach(n => {
+                const a = document.getElementById('athanAudio'+n);
+                if(a && a !== audio){ a.pause(); a.currentTime = 0; }
+            });
+            const num = VALID_SOUNDS.find(n => document.getElementById('athanAudio'+n) === audio);
+            if(num && ATHAN_FILES[num]){
+                if(!audio.src || audio.src === window.location.href){
+                    audio.src = encodeURI(ATHAN_FILES[num]);
+                }
+            }
             const volume = Math.max(0, Math.min(1, parseInt(localStorage.getItem('noorAthanVolume') || '100',10) / 100));
             audio.volume = volume;
             audio.muted = false;
             audio.currentTime = 0;
-            audio.load();
-            audio.play().then(() => {
-                athanAudio = audio;
-                const st=document.getElementById('athanStatus'); if(st) st.textContent='در حال پخش اذان محلی';
-                setTimeout(syncHeroPlayIcon, 150);
-            }).catch(err => {
-                console.error('Play error:', err);
-                const st=document.getElementById('athanStatus'); if(st) st.textContent='پخش نشد؛ دوباره روی پخش بزنید.';
-            });
+            try { audio.load(); } catch(e){}
+            const p = audio.play();
+            if(p && p.then){
+                p.then(() => {
+                    athanAudio = audio;
+                    const st = document.getElementById('athanStatus');
+                    if(st) st.textContent = 'در حال پخش اذان';
+                    setTimeout(syncHeroPlayIcon, 150);
+                }).catch(err => {
+                    console.error('خطای پخش:', err);
+                    const st = document.getElementById('athanStatus');
+                    if(st) st.textContent = 'فایل صوتی موجود نیست یا پخش نشد';
+                });
+            }
         }
 
         function previewAthan() { playAthanManually(); }
@@ -1441,6 +1388,7 @@
 
         function playAthan() {
             const audio = getSelectedAudio();
+            if(!audio) return;
             const volume = parseInt(localStorage.getItem('noorAthanVolume') || '100') / 100;
             audio.volume = volume;
             audio.currentTime = 0;
@@ -1475,18 +1423,9 @@
             document.getElementById("athanSettingsModal").classList.add("show");
             populateCitySelect();
             document.getElementById("citySelect").value = localStorage.getItem('noorCity') || 'kabul';
-            
-            // ✅ اصلاح: پشتیبانی از گزینه ۴ (اهل‌سنت)
             const savedSound = localStorage.getItem('noorAthanSound') || '1';
             const soundSelect = document.getElementById('athanSoundSelect');
-            if(soundSelect) {
-                if(['1','2','3','4'].includes(savedSound)){
-                    soundSelect.value = savedSound;
-                } else {
-                    soundSelect.value = '1';
-                }
-            }
-            
+            if(soundSelect) soundSelect.value = VALID_SOUNDS.includes(savedSound) ? savedSound : '1';
             document.getElementById("volumeSlider").value = localStorage.getItem('noorAthanVolume') || '100';
             document.getElementById("useGpsSwitch").classList.toggle('on', localStorage.getItem('noorUseGps') === 'true');
             document.getElementById("globalAthanSwitch").classList.toggle('on', localStorage.getItem('noorGlobalAthan') !== 'false');
@@ -1497,10 +1436,7 @@
 
             ['fajr','dhuhr','asr','maghrib','isha'].forEach(p => {
                 const el = document.getElementById(p + 'Offset');
-                if (el) {
-                    populateOffsetSelect(el);
-                    el.value = localStorage.getItem('noorOffset_' + p) || '0';
-                }
+                if (el) { populateOffsetSelect(el); el.value = localStorage.getItem('noorOffset_' + p) || '0'; }
                 const en = document.getElementById(p + 'Enable');
                 if (en) en.classList.toggle('on', localStorage.getItem('noorEnable_' + p) !== 'false');
             });
@@ -1535,6 +1471,9 @@
 
         document.getElementById("citySelect").addEventListener("change", function() {
             localStorage.setItem('noorCity', this.value);
+            localStorage.setItem('noorUseGps', 'false');
+            const sw = document.getElementById("useGpsSwitch");
+            if(sw) sw.classList.remove('on');
             updatePrayerTimes();
             initQibla();
         });
@@ -1542,18 +1481,17 @@
             this.classList.toggle('on');
             localStorage.setItem('noorUseGps', this.classList.contains('on'));
             updatePrayerTimes();
-            initQibla();
+            initQibla(true);
         });
         document.getElementById("requestGpsBtn").addEventListener("click", requestGpsLocation);
+
         document.getElementById("prayerMethodSelect").addEventListener("change", function() {
             localStorage.setItem('noorPrayerMethod', this.value);
-            if(this.value==='hanafi') localStorage.setItem('noorAthanSound','4');
-            else if(localStorage.getItem('noorAthanSound')==='4') localStorage.setItem('noorAthanSound','1');
-            const ss=document.getElementById('athanSoundSelect'); if(ss) ss.value=localStorage.getItem('noorAthanSound')||'1';
             updatePrayerTimes();
             updateNextPrayerCountdown();
             updatePrayerHero();
         });
+
         document.getElementById("globalAthanSwitch").addEventListener("click", function() {
             this.classList.toggle('on');
             localStorage.setItem('noorGlobalAthan', this.classList.contains('on'));
@@ -1569,31 +1507,25 @@
             });
         });
 
-        // =========================================================
-        // ✅ اصلاح اصلی: انتخاب صدا — پشتیبانی از گزینه ۴
-        // =========================================================
         document.getElementById("athanSoundSelect").addEventListener("change", function() {
-            const method = localStorage.getItem('noorPrayerMethod') || 'jafari';
-            if(method === 'hanafi'){ 
-                this.value = '4'; 
-                localStorage.setItem('noorAthanSound','4'); 
-            }
-            else { 
-                // ✅ اصلاح: حالا گزینه ۴ (دلنشین) هم در حالت جعفری مجاز است
-                if(['1','2','3','4'].includes(this.value)){
-                    localStorage.setItem('noorAthanSound', this.value);
-                } else {
-                    localStorage.setItem('noorAthanSound', '1');
-                }
+            if(VALID_SOUNDS.includes(this.value)){
+                localStorage.setItem('noorAthanSound', this.value);
+            } else {
+                localStorage.setItem('noorAthanSound', '1');
             }
         });
-        
+
         document.getElementById("volumeSlider").addEventListener("input", function() {
             localStorage.setItem('noorAthanVolume', this.value);
         });
         document.getElementById("persistentNotificationSwitch").addEventListener("click", togglePersistentNotification);
         document.getElementById("persistentNotificationSwitch").addEventListener("keydown", function(e){
             if(e.key==='Enter'||e.key===' '){ e.preventDefault(); togglePersistentNotification(); }
+        });
+        document.getElementById("persistentNotificationBtn").addEventListener("click", async function(){
+            const active = localStorage.getItem('noorPersistentNotification')==='true';
+            if(active) await updatePersistentNotification(true);
+            else await enablePersistentNotification();
         });
         ['fajr','dhuhr','asr','maghrib','isha'].forEach(p => {
             const el = document.getElementById(p + 'Offset');
@@ -1646,9 +1578,7 @@
 
         let noorPersistentNotification=null;
 
-        function notificationSupported(){
-            return 'Notification' in window;
-        }
+        function notificationSupported(){ return 'Notification' in window; }
 
         function getPersistentNotificationText(){
             const now=new Date();
@@ -1658,7 +1588,13 @@
             const solar=`${weekday} ${faNumber(j[2])} ${SOLAR_MONTHS[j[1]-1]} ${faNumber(j[0])}`;
             const greg=`${faNumber(now.getDate())} ${GREGORIAN_MONTHS_FA[now.getMonth()]} ${faNumber(now.getFullYear())}`;
             const lunar=`${faNumber(islamic.day)} ${ISLAMIC_MONTHS[islamic.month]||''} ${faNumber(islamic.year)}`;
-            return {title:'نــــور | تقویم امروز',body:`${solar}\n${greg} • ${lunar}`} ;
+            let prayerLine='';
+            const t=window._prayerTimes;
+            if(t){
+                const next=getNextPrayer(now);
+                prayerLine=`\nاذان بعدی: ${next.name} — ${next.time}`;
+            }
+            return {title:'نــــور | تقویم امروز',body:`${solar}\n${greg} • ${lunar}${prayerLine}`};
         }
 
         async function showPrayerNotification(prayerName,timeLabel,minutesBefore){
@@ -1670,11 +1606,11 @@
                 if(navigator.serviceWorker){
                     const reg=await navigator.serviceWorker.getRegistration().catch(()=>null);
                     if(reg && reg.showNotification){
-                        await reg.showNotification(title,{body,tag:`noor-prayer-${prayerName}`,dir:'rtl',lang:'fa',renotify:false});
+                        await reg.showNotification(title,{body,tag:`noor-prayer-${prayerName}`,icon:'assets/icon-192.png',dir:'rtl',lang:'fa',renotify:false});
                         return;
                     }
                 }
-                const n=new Notification(title,{body,tag:`noor-prayer-${prayerName}`,requireInteraction:true,dir:'rtl',lang:'fa'});
+                const n=new Notification(title,{body,icon:'assets/icon-192.png',tag:`noor-prayer-${prayerName}`,requireInteraction:true,dir:'rtl',lang:'fa'});
                 n.onclick=()=>{try{window.focus();n.close();}catch(e){}};
             }catch(e){ console.warn('Prayer notification unavailable',e); }
         }
@@ -1691,11 +1627,11 @@
                 if(navigator.serviceWorker){
                     const reg=await navigator.serviceWorker.getRegistration().catch(()=>null);
                     if(reg && reg.showNotification){
-                        await reg.showNotification(data.title,{body:data.body,tag:'noor-persistent-prayer',requireInteraction:true,renotify:false,silent:true,dir:'rtl',lang:'fa'});
+                        await reg.showNotification(data.title,{body:data.body,icon:'assets/icon-192.png',tag:'noor-persistent-prayer',requireInteraction:true,renotify:false,silent:true,dir:'rtl',lang:'fa'});
                         return;
                     }
                 }
-                noorPersistentNotification=new Notification(data.title,{body:data.body,tag:'noor-persistent-prayer',requireInteraction:true,renotify:false,silent:true,dir:'rtl',lang:'fa'});
+                noorPersistentNotification=new Notification(data.title,{body:data.body,icon:'assets/icon-192.png',tag:'noor-persistent-prayer',requireInteraction:true,renotify:false,silent:true,dir:'rtl',lang:'fa'});
                 noorPersistentNotification.onclick=()=>{try{window.focus();}catch(e){}};
             }catch(e){ console.warn('Persistent notification unavailable',e); }
         }
@@ -1705,6 +1641,7 @@
             if(noorPersistentNotification){try{noorPersistentNotification.close();}catch(e){} noorPersistentNotification=null;}
             refreshPersistentNotificationUI();
         }
+
         async function enablePersistentNotification(){
             if(!notificationSupported()){ alert('مرورگر شما از اعلان پشتیبانی نمی‌کند.'); return false; }
             try{
@@ -1719,15 +1656,23 @@
                 localStorage.setItem('noorPersistentNotification','true');
                 refreshPersistentNotificationUI();
                 await updatePersistentNotification(true);
-                alert('برای دریافت اعلان‌ها، از تنظیمات گوشی، اعلان‌های مرورگر را برای این اپ مجاز کنید');
+                alert('اعلان دائمی NOOR فعال شد. برای دریافت اعلان‌ها، از تنظیمات گوشی، اعلان‌های مرورگر را برای این اپ مجاز کنید');
                 return true;
             }catch(e){ console.warn(e); alert('فعال‌سازی اعلان دائمی ممکن نشد.'); return false; }
         }
+
         function refreshPersistentNotificationUI(){
             const active=localStorage.getItem('noorPersistentNotification')==='true';
             const sw=document.getElementById('persistentNotificationSwitch');
+            const btn=document.getElementById('persistentNotificationBtn');
+            const status=document.getElementById('persistentNotificationStatus');
             if(sw){ sw.classList.toggle('on',active); sw.setAttribute('aria-checked',String(active)); }
+            if(btn) btn.textContent = active ? 'به‌روزرسانی اعلان دائمی' : 'فعال‌سازی اعلان دائمی';
+            if(status) status.innerHTML = active 
+                ? '<strong>فعال:</strong> اعلان تقویم و اوقات شرعی NOOR در نوار اعلان نمایش داده می‌شود.' 
+                : 'اعلان دائمی خاموش است.';
         }
+
         async function togglePersistentNotification(){
             const active=localStorage.getItem('noorPersistentNotification')==='true';
             if(active) closePersistentNotification();
@@ -1781,10 +1726,8 @@
             if(athanAudio && !athanAudio.paused){ muteAthan(); } else { playAthanManually(); }
             setTimeout(syncHeroPlayIcon,150);
         });
-        
-        // =========================================================
+
         // 13. THEME & GENERAL
-        // =========================================================
         document.getElementById("themeBtn").addEventListener("click", function() {
             document.body.classList.toggle("dark-mode");
             localStorage.setItem('noorTheme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
@@ -1826,17 +1769,17 @@
             });
         });
 
-        if(!['1','2','3','4'].includes(localStorage.getItem('noorAthanSound'))) localStorage.setItem('noorAthanSound','1');
-        if(localStorage.getItem('noorPrayerMethod')==='hanafi') localStorage.setItem('noorAthanSound','4');
+        // پاکسازی کلید صدا اگر دلنشین ذخیره شده بود
+        if(!VALID_SOUNDS.includes(localStorage.getItem('noorAthanSound'))) {
+            localStorage.setItem('noorAthanSound','1');
+        }
         if(localStorage.getItem("noorGlobalAthan") === null) localStorage.setItem("noorGlobalAthan","true");
         if(localStorage.getItem("noorPrayerMethod") === null) localStorage.setItem("noorPrayerMethod","jafari");
         if(localStorage.getItem("noorPrePrayer") === null) localStorage.setItem("noorPrePrayer","5");
         if(localStorage.getItem("noorShowAthanScreen") === null) localStorage.setItem("noorShowAthanScreen","true");
         if(localStorage.getItem("noorPersistentNotification") === null) localStorage.setItem("noorPersistentNotification","false");
 
-        // =========================================================
         // 14. INIT
-        // =========================================================
         updateTodaySection();
         updateTopDateNotification();
         renderCalendar();
@@ -1844,7 +1787,13 @@
         renderAfghanHistory();
         updatePrayerTimes();
         updatePrayerHero();
-        setTimeout(() => { updateNextPrayerCountdown(); updatePrayerHero(); initQibla(); refreshPersistentNotificationUI(); if(localStorage.getItem('noorPersistentNotification')==='true') updatePersistentNotification(true); }, 500);
+        setTimeout(() => { 
+            updateNextPrayerCountdown(); 
+            updatePrayerHero(); 
+            initQibla(); 
+            refreshPersistentNotificationUI(); 
+            if(localStorage.getItem('noorPersistentNotification')==='true') updatePersistentNotification(true); 
+        }, 500);
 
         athanCheckInterval = setInterval(() => { checkAthanTime(); checkPrePrayerNotification(); }, 30000);
         persistentNotificationInterval = setInterval(() => { updatePersistentNotification(); }, 15*60000);
