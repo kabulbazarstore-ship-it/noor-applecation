@@ -70,7 +70,6 @@
         .msg-condolence { background: rgba(192, 57, 43, 0.1); color: var(--red); border: 1px solid var(--red); }
         .msg-neutral { background: var(--bg-tab); color: var(--text-primary); border: 1px solid var(--border-gold); }
 
-        /* ===== اعمال امروز - فقط نام، بدون دکمه ===== */
         .action-item { display: flex; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--border-gold); gap: 12px; }
         .action-item:last-child { border-bottom: none; }
         .action-item .action-info { display: flex; align-items: center; gap: 12px; flex: 1; }
@@ -85,7 +84,6 @@
         .next-prayer-box .name { font-size: 1.3rem; font-weight: 800; color: var(--gold); margin: 4px 0; }
         .next-prayer-box .countdown { font-size: 1.6rem; font-weight: 800; color: var(--text-primary); font-variant-numeric: tabular-nums; letter-spacing: 2px; }
 
-        
         .prayer-grid-8 { grid-template-columns: repeat(4, 1fr); }
         @media(max-width:520px){ .prayer-grid-8{grid-template-columns:repeat(2,1fr);} }
         .prayer-method-line { text-align:center; margin-top:10px; font-size:.72rem; color:var(--text-muted); }
@@ -281,7 +279,7 @@
             </div>
         </section>
 
-        <!-- TODAY ACTIONS (فقط نام، بدون دکمه) -->
+        <!-- TODAY ACTIONS -->
         <section class="card">
             <div class="card-header">
                 <h2>
@@ -486,9 +484,9 @@
                 <div class="setting-row">
                     <label>انتخاب صدا</label>
                     <select id="athanSoundSelect">
-                        <option value="1">مرتضی فاطمی</option>
-                        <option value="2">موذن‌زاده اردبیلی</option>
-                        <option value="3">صبح‌دل</option>
+                        <option value="1">مرتضی فاطمی (شیعه)</option>
+                        <option value="2">موذن‌زاده اردبیلی (شیعه)</option>
+                        <option value="3">صبح‌دل (شیعه)</option>
                         <option value="4">دلنشین — اهل‌سنت</option>
                     </select>
                 </div>
@@ -1036,9 +1034,6 @@
             if(actionsBox && !actionsBox.querySelector('.today-actions-more')) actionsBox.insertAdjacentHTML('beforeend',`<div class="today-actions-more" style="margin-top:10px;text-align:center"><a href="amal.html" style="display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border:1px solid var(--border-gold);border-radius:12px;color:var(--gold);text-decoration:none;font-size:.72rem;font-weight:700">مشاهده جزئیات در بخش اعمال</a></div>`);
         }
 
-        // =========================================================
-        // بخش اعمال امروز - فقط نام عمل نمایش داده می‌شود، بدون دکمه
-        // =========================================================
         function renderTodayActions(weekday, islamic) {
             const container = document.getElementById("todayActionsList");
             if(!container) return;
@@ -1292,7 +1287,6 @@
 
         function closeModal(id) { document.getElementById(id).classList.remove("show"); }
 
-        // GPS LOCATION — used for both prayer times and qibla
         function requestGpsLocation(){
             if(!navigator.geolocation){
                 alert("مرورگر این دستگاه از موقعیت مکانی پشتیبانی نمی‌کند.");
@@ -1352,9 +1346,7 @@
                     if (Number.isFinite(event.webkitCompassHeading)) {
                         heading = event.webkitCompassHeading;
                     } else if (Number.isFinite(event.alpha)) {
-                        heading = (event.absolute === true ? event.alpha : (360 - event.alpha)) % 360;
-                        const screenAngle = (screen.orientation && Number.isFinite(screen.orientation.angle)) ? screen.orientation.angle : 0;
-                        if(event.absolute !== true) heading = (heading + screenAngle) % 360;
+                        heading = (360 - event.alpha) % 360;
                     }
                     if (Number.isFinite(heading)) {
                         const rotation = ((bearing - heading + 540) % 360) - 180;
@@ -1384,12 +1376,7 @@
                 }
                 status.textContent = "در حال دریافت موقعیت مکانی...";
                 navigator.geolocation.getCurrentPosition(
-                    (pos) => {
-                        localStorage.setItem('noorGpsLat',String(pos.coords.latitude));
-                        localStorage.setItem('noorGpsLng',String(pos.coords.longitude));
-                        localStorage.setItem('noorUseGps','true');
-                        applyQibla(pos.coords.latitude, pos.coords.longitude, "موقعیت فعلی (GPS)");
-                    },
+                    (pos) => applyQibla(pos.coords.latitude, pos.coords.longitude, "موقعیت فعلی (GPS)"),
                     (err) => applyQibla(city.lat, city.lng, city.name),
                     { enableHighAccuracy: true, timeout: 8000 }
                 );
@@ -1404,6 +1391,7 @@
         let athanAudio = null;
         let persistentNotificationInterval = null;
         let noorMediaUnlocked = false;
+
         function unlockAthanAudio(){
             if(noorMediaUnlocked) return;
             const a=getSelectedAudio(); if(!a) return;
@@ -1412,11 +1400,15 @@
         }
         document.addEventListener('click', unlockAthanAudio, {once:true, passive:true});
 
+        // =========================================================
+        // ✅ اصلاح اصلی: تابع انتخاب فایل صوتی — پشتیبانی کامل از گزینه ۴
+        // =========================================================
         function getSelectedAudio() {
             let soundNum = localStorage.getItem('noorAthanSound') || '1';
             const method = localStorage.getItem('noorPrayerMethod') || 'jafari';
-            if(method === 'hanafi') soundNum='4';
-            if(!['1','2','3','4'].includes(soundNum)) soundNum='1';
+            if(method === 'hanafi') soundNum = '4';
+            // ✅ حالا ۴ گزینه (1,2,3,4) پشتیبانی می‌شوند
+            if(!['1','2','3','4'].includes(soundNum)) soundNum = '1';
             return document.getElementById('athanAudio'+soundNum);
         }
 
@@ -1432,6 +1424,7 @@
             audio.play().then(() => {
                 athanAudio = audio;
                 const st=document.getElementById('athanStatus'); if(st) st.textContent='در حال پخش اذان محلی';
+                setTimeout(syncHeroPlayIcon, 150);
             }).catch(err => {
                 console.error('Play error:', err);
                 const st=document.getElementById('athanStatus'); if(st) st.textContent='پخش نشد؛ دوباره روی پخش بزنید.';
@@ -1439,8 +1432,12 @@
         }
 
         function previewAthan() { playAthanManually(); }
-        function pauseAthanNow(){ if(athanAudio){ athanAudio.pause(); athanAudio.currentTime=0; } const st=document.getElementById('athanStatus'); if(st) st.textContent='پخش متوقف شد'; }
-
+        function pauseAthanNow(){ 
+            if(athanAudio){ athanAudio.pause(); athanAudio.currentTime=0; } 
+            const st=document.getElementById('athanStatus'); 
+            if(st) st.textContent='پخش متوقف شد'; 
+            setTimeout(syncHeroPlayIcon, 150);
+        }
 
         function playAthan() {
             const audio = getSelectedAudio();
@@ -1478,7 +1475,18 @@
             document.getElementById("athanSettingsModal").classList.add("show");
             populateCitySelect();
             document.getElementById("citySelect").value = localStorage.getItem('noorCity') || 'kabul';
-            document.getElementById("athanSoundSelect").value = (['1','2','3'].includes(localStorage.getItem('noorAthanSound')) ? localStorage.getItem('noorAthanSound') : '1');
+            
+            // ✅ اصلاح: پشتیبانی از گزینه ۴ (اهل‌سنت)
+            const savedSound = localStorage.getItem('noorAthanSound') || '1';
+            const soundSelect = document.getElementById('athanSoundSelect');
+            if(soundSelect) {
+                if(['1','2','3','4'].includes(savedSound)){
+                    soundSelect.value = savedSound;
+                } else {
+                    soundSelect.value = '1';
+                }
+            }
+            
             document.getElementById("volumeSlider").value = localStorage.getItem('noorAthanVolume') || '100';
             document.getElementById("useGpsSwitch").classList.toggle('on', localStorage.getItem('noorUseGps') === 'true');
             document.getElementById("globalAthanSwitch").classList.toggle('on', localStorage.getItem('noorGlobalAthan') !== 'false');
@@ -1560,11 +1568,26 @@
                 localStorage.setItem('noorOffset_' + p, '-' + this.value);
             });
         });
+
+        // =========================================================
+        // ✅ اصلاح اصلی: انتخاب صدا — پشتیبانی از گزینه ۴
+        // =========================================================
         document.getElementById("athanSoundSelect").addEventListener("change", function() {
-            const method=localStorage.getItem('noorPrayerMethod')||'jafari';
-            if(method==='hanafi'){ this.value='4'; localStorage.setItem('noorAthanSound','4'); }
-            else { localStorage.setItem('noorAthanSound', ['1','2','3'].includes(this.value)?this.value:'1'); }
+            const method = localStorage.getItem('noorPrayerMethod') || 'jafari';
+            if(method === 'hanafi'){ 
+                this.value = '4'; 
+                localStorage.setItem('noorAthanSound','4'); 
+            }
+            else { 
+                // ✅ اصلاح: حالا گزینه ۴ (دلنشین) هم در حالت جعفری مجاز است
+                if(['1','2','3','4'].includes(this.value)){
+                    localStorage.setItem('noorAthanSound', this.value);
+                } else {
+                    localStorage.setItem('noorAthanSound', '1');
+                }
+            }
         });
+        
         document.getElementById("volumeSlider").addEventListener("input", function() {
             localStorage.setItem('noorAthanVolume', this.value);
         });
@@ -1738,7 +1761,6 @@
             });
         }
 
-
         function updatePrayerHero(){
             const t=window._prayerTimes; if(!t) return;
             const d=new Date(); const j=gregorianToJalali(d.getFullYear(),d.getMonth()+1,d.getDate());
@@ -1746,7 +1768,8 @@
             const cityEl=document.getElementById('heroCity'); if(cityEl) cityEl.textContent=`${window._currentCity||'کابل'}، افغانستان`;
             const next=getNextPrayer(d);
             const n=document.getElementById('heroPrayerName'), tm=document.getElementById('heroPrayerTime');
-            if(n) n.textContent=next.dayOffset===1?next.name+' (فردا)':next.name; if(tm) tm.textContent=next.time||'--:--';
+            if(n) n.textContent=next.dayOffset===1?next.name+' (فردا)':next.name; 
+            if(tm) tm.textContent=next.time||'--:--';
         }
         function syncHeroPlayIcon(){
             const a=athanAudio; const on=a && !a.paused;
